@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useEffect } from "react"
+import  {scene1} from './script'
+import Blank from "./components/Blank"
+import "./App.css"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+// console.log(scene1)
+// console.log(scene1.split('\n'))
+
+const obj = {
+
 }
 
-export default App;
+
+function App() {
+	return (
+		<div className="App">
+			<h1>Script_Blanks</h1>
+			<br />
+			<p>
+        {'The '}
+				<Blank word="quick" />
+        {' brown '}
+				<Blank word="fox" />
+				<br/>
+				{scene1}
+			</p>
+		</div>
+	)
+}
+
+export default App
