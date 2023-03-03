@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Script-Blanks
+This is a react-app-game for filling in the blanks of popular movie scripts.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
 
 ## Available Scripts
 
