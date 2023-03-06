@@ -1,10 +1,10 @@
 import Blank from "./Blank"
 
-function Line({ speaker, word }) {
+function Line({ speaker, text, word, setPoints, points }) {
 	return (
 		<div>
-			<h4>{speaker.toUpperCase()}</h4>
-			{"No no "} <Blank word={word} />
+			<h4>{speaker}</h4>
+			{text} <Blank word={word} setPoints={setPoints} points={points} />
 		</div>
 	)
 }

@@ -1,28 +1,46 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
+import { scriptToArr } from "./builderScripts"
 import { scene1 } from "./script"
-import Blank from "./components/Blank"
 import Line from "./components/Line"
 import "./App.css"
 
-// console.log(scene1)
-// console.log(scene1.split('\n'))
+// console.log(scriptToObj(scene1))
+let currScript = scriptToArr(scene1)
+// console.log(currScript)
 
-const obj = {}
+
+
+
 
 function App() {
+	const [points, setPoints] = useState(0)
+	let text = "No no"
+
+
+	let lines = currScript.map((line) => {
+		console.log(line)
+		return <Line
+					speaker={line.speaker}
+					word={"line"}
+					text={line.line}
+					setPoints={setPoints}
+					points={points}
+				/>
+	})
 	return (
 		<div className="App">
 			<h1>Script_Blanks</h1>
 			<br />
-			<p>
-				{"The "}
-				<Blank word="quick" />
-				{" brown "}
-				<Blank word="fox" />
-				<br />
-				{scene1}
-			</p>
-			<Line speaker={"Ellie"} word={'line'} />
+			<h2>{points}</h2>
+			
+			{lines}
+			<Line
+				speaker={"Ellie"}
+				word={"line"}
+				text={text}
+				setPoints={setPoints}
+				points={points}
+			/>
 		</div>
 	)
 }
